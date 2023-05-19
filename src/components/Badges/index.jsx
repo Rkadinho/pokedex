@@ -1,7 +1,7 @@
-import { Badge, HStack } from 'native-base';
+import { Badge } from 'native-base';
 
 import React from "react";
-import { TouchableOpacity, StyleSheet} from "react-native";
+import { TouchableOpacity, StyleSheet } from "react-native";
 
 export default function DefaultBadge({
   buttonText,

@@ -1,6 +1,6 @@
 import DefaultButton from '../../components/Button';
 import React from "react";
-import { View, ScrollView, StyleSheet} from "react-native";
+import { View, StyleSheet, Text} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
@@ -9,18 +9,29 @@ const Home = () => {
   function handleNavFirstGeneration() {
     navigation.navigate("FirstGeneration");
   }
+  function handleNavFavorite() {
+    navigation.navigate("Favorite");
+  }
 
   return(
     <View style={styles.container}>
-      <ScrollView>
+      <View style={styles.page}>
+        <Text style={styles.title}>Pokedex Go</Text>
         <View style={{ alignItems: 'center' }}>
-          <DefaultButton buttonText={'1º Geração'}
+          <DefaultButton buttonText={'Kanto'}
             width={250}
             height={50}
             handlePress={handleNavFirstGeneration}
+            icon={'globe'}
+          />
+          <DefaultButton buttonText={'Favorito'}
+            width={250}
+            height={50}
+            handlePress={handleNavFavorite}
+            icon={'globe'}
           />
         </View>
-      </ScrollView>
+      </View>
     </View>
   )
 };
@@ -28,9 +39,21 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    marginTop: 50
-  }
+    backgroundColor: 'white'
+  },
+  page:{
+    flex: 2,
+    marginTop: 20,
+    padding: 10,
+    alignContent: 'center'
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginVertical: 10,
+    marginRight: 95
+  },
 });
 
 export default Home;

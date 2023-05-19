@@ -1,8 +1,8 @@
 import { View } from 'react-native';
 import React from 'react';
-import { Input, Box, Center, NativeBaseProvider } from "native-base";
+import { Input, Box } from "native-base";
 
-const DefaultInput = ({ placeholder, value, onChangeText }) => {
+const DefaultInput = ({ placeholder, value, onChangeText, variant }) => {
 
   return (
     <View>
@@ -12,6 +12,7 @@ const DefaultInput = ({ placeholder, value, onChangeText }) => {
           placeholder={placeholder}
           value={value}
           onChangeText={onChangeText}
+          variant={variant}
         />
       </Box>
     </View>
